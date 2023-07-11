@@ -33,7 +33,7 @@ app.use(express.static("public"));
 
 //async
 app.get("/",  function(req, res) {
-res.send("hello")
+res.send("<h1> Hello Anand Bhai </h1>")
 //const day = date.getDate();
 //
 //  let ItemList = await Item.find({});
