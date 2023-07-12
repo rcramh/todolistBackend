@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -13,11 +13,15 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-//connect with local mongodb database 
-mongoose.connect('mongodb+srv://rahulchaubey68rj:rahulluhar@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
-//mongodb+srv://rahulchaubey68rj:rahulluhar@cluster0.vqukqis.mongodb.net/todolistDB
+//getting id pass from .env file for security reasons
+const DBid = process.env.userid;
+const DBpass = process.env.password;
+
+connect with local mongodb database
+mongoose.connect('mongodb+srv://DBid:DBpass@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
 //mongodb://localhost:27017/todolistDB
-//create schema for todolistDB collection
+
+create schema for todolistDB collection
 const itemsSchema = {
   name : String
 };
@@ -33,7 +37,6 @@ const item1 = new Item({
 
 
 app.get("/", async function(req, res) {
-//res.send("<h1> Hello Anand Bhai </h1>")
 const day = date.getDate();
 
   let ItemList = await Item.find({});
@@ -74,5 +77,5 @@ app.post("/delete", function(req, res){
 
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
-  console.log('Server started on port ${port}');
+  console.log(`Server started on port ${port}`);
 });
