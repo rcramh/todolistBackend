@@ -21,7 +21,7 @@ const DBpass = process.env.password;
 mongoose.connect('mongodb+srv://DBid:DBpass@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
 //mongodb://localhost:27017/todolistDB
 
-create schema for todolistDB collection
+//create schema for todolistDB collection
 const itemsSchema = {
   name : String
 };
@@ -61,7 +61,7 @@ app.post("/delete", function(req, res){
 
   const itemid = req.body.checkbox;
 
-  console.log(itemid);
+  //console.log(itemid);
 
   Item.deleteMany({_id : itemid}).then(function(){
   console.log("Todo item deleted");//Success
