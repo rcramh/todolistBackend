@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 //connect with local mongodb database 
-mongoose.connect('mongodb+srv://rahulchaubey68rj:rahulluhar@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
-//mongodb+srv://rahulchaubey68rj:rahulluhar@cluster0.vqukqis.mongodb.net/todolistDB
+mongoose.connect('mongodb+srv://rahulchaubey68rj:pXiR10PGXTRIEzAQ@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
+//mongodb+srv://rahulchaubey68rj:<password>@cluster0.vqukqis.mongodb.net/todolistDB
 //mongodb://localhost:27017/todolistDB
 //create schema for todolistDB collection
 const itemsSchema = {
