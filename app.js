@@ -18,7 +18,7 @@ const DBid = process.env.userid;
 const DBpass = process.env.password;
 
 //connect with local mongodb database
-mongoose.connect('mongodb+srv://DBid:DBpass@cluster0.vqukqis.mongodb.net/todolistDB' , {useNewUrlParser: true} );
+mongoose.connect(`mongodb+srv://${DBid}:${DBpass}@cluster0.vqukqis.mongodb.net/todolistDB` , {useNewUrlParser: true} );
 //mongodb://localhost:27017/todolistDB
 
 //create schema for todolistDB collection
